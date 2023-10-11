@@ -1,11 +1,13 @@
 <template>
-  <button class="p-3 rounded-md" :class="color">
+  <button class="p-3 rounded-md outline-none hover:opacity-80" :class="colour">
     <slot></slot>
   </button>
 </template>
 
 <script setup>
 
-const props = defineProps(['color'])
+const props = defineProps({
+    colour: String, // Define the prop and its type
+  })
 
 </script>

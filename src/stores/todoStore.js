@@ -1,14 +1,16 @@
-import { defineStore } from "pinia";
+import { defineStore } from "pinia"
+
 
 export const useTodoStore = defineStore("todoStore", {
   state: () => ({
-    todos: []
+    todos: [{id:1, title: 'Buy Milk', isComplete: false},{id:2, title: 'Read a book', isComplete: false}],
+  
   }),
   getters: {},
   actions: {
     addTodo(todo) {
       // Add a new todo item to the array
-      this.todos.push(todo)
+      this.todos.unshift(todo)
     },
     deleteTodo(todoId) {
       // Find the index of the todo item with the given ID
@@ -18,6 +20,7 @@ export const useTodoStore = defineStore("todoStore", {
       if (index !== -1) {
         this.todos.splice(index, 1)
       }
+  
     },
     completeTodo(todoId) {
       // Find the index of the todo item with the given ID
