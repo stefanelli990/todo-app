@@ -19,16 +19,16 @@
 
 <script setup>
 
-import TodoBtn from "../components/TodoBtn.vue";
+import TodoBtn from "../components/TodoBtn.vue"
 import { ref } from "vue"
 import { Icon } from "@iconify/vue"
 import { useTodoStore } from "../stores/todoStore"
 import { v4 as uuidv4 } from "uuid"
 
-const todoInput = ref("");
-const errMsg = ref(false);
+const todoInput = ref("")
+const errMsg = ref(false)
 
-const todoStore = useTodoStore();
+const todoStore = useTodoStore()
 
 const addNewTodo = () => {
   const todo = {
@@ -38,11 +38,12 @@ const addNewTodo = () => {
   }
 
   if (todoInput.value.length) {
-    todoStore.addTodo(todo);
-    todoInput.value = "";
-    errMsg.value = false;
+    todoStore.addTodo(todo)
+    todoInput.value = ""
+    errMsg.value = false
+    todoStore.filter = 'all'
   } else {
-    errMsg.value = true;
+    errMsg.value = true
   }
 };
 </script>
