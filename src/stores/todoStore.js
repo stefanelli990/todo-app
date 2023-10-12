@@ -4,9 +4,24 @@ import { defineStore } from "pinia"
 export const useTodoStore = defineStore("todoStore", {
   state: () => ({
     todos: [{id:1, title: 'Buy Milk', isComplete: false},{id:2, title: 'Read a book', isComplete: false}],
-  
+    
   }),
-  getters: {},
+  getters: {
+    completedTodos() {
+      return this.todos.filter(todo => todo.isComplete)
+    },
+    incompleteTodos() {
+      return this.todos.filter(todo => !todo.isComplete)
+    },
+    countCompleted() {
+      return this.todos.reduce((acc, curr) => {
+        return curr.isComplete ? acc + 1 : acc
+      }, 0)
+    },
+    countTotal() {
+      return this.todos.length
+    }
+  },
   actions: {
     addTodo(todo) {
       // Add a new todo item to the array
@@ -30,6 +45,15 @@ export const useTodoStore = defineStore("todoStore", {
       if(todo) {
         todo.isComplete = !todo.isComplete
       }
-    }
+    },
+    updateTodo(todoId,inputTodo) {
+   
+
+      const todo = this.todos.find((todo) => todo.id === todoId)
+
+      console.log(todoId,inputTodo)
+
+      todo.title = inputTodo
+   }
   }
 })
