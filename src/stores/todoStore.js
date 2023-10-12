@@ -1,10 +1,9 @@
 import { defineStore } from "pinia"
 
-
 export const useTodoStore = defineStore("todoStore", {
   state: () => ({
     todos: [{id:1, title: 'Buy Milk', isComplete: false},{id:2, title: 'Read a book', isComplete: false}],
-    
+    filter: 'all'
   }),
   getters: {
     completedTodos() {
@@ -28,6 +27,7 @@ export const useTodoStore = defineStore("todoStore", {
       this.todos.unshift(todo)
     },
     deleteTodo(todoId) {
+      
       // Find the index of the todo item with the given ID
       const index = this.todos.findIndex((todo) => todo.id === todoId)
 
@@ -38,6 +38,7 @@ export const useTodoStore = defineStore("todoStore", {
   
     },
     completeTodo(todoId) {
+
       // Find the index of the todo item with the given ID
       const todo = this.todos.find((todo) => todo.id === todoId)
 
@@ -47,12 +48,9 @@ export const useTodoStore = defineStore("todoStore", {
       }
     },
     updateTodo(todoId,inputTodo) {
-   
 
+       // Find the index of the todo item with the given ID
       const todo = this.todos.find((todo) => todo.id === todoId)
-
-      console.log(todoId,inputTodo)
-
       todo.title = inputTodo
    }
   }

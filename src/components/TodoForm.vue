@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-md mx-auto px-4 mb-8">
-    <form @submit.prevent="addNewTodo" class="bg-slate-900 flex p-3 border rounded-lg" :class="errMsg ? 'border-red-500' : 'border-slate-900'">
+    <form @submit.prevent="addNewTodo" class="bg-gray-900 flex p-3 border rounded-lg" :class="errMsg ? 'border-red-500' : 'border-slate-900'">
       <input
-        class="bg-transparent flex-1 px-4 py-2 outline-none"
+        class="bg-transparent w-full px-4 py-2 outline-none"
         type="text"
         v-model="todoInput"
         placeholder="Add new todo..."
