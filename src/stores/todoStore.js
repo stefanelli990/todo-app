@@ -2,8 +2,9 @@ import { defineStore } from "pinia"
 
 export const useTodoStore = defineStore("todoStore", {
   state: () => ({
-    todos: [{id:1, title: 'Buy Milk', isComplete: false},{id:2, title: 'Read a book', isComplete: false}],
-    filter: 'all'
+    // todos: [{id:1, title: 'Buy Milk', isComplete: false},{id:2, title: 'Read a book', isComplete: false}],
+    todos: [],
+    tab: 'all'
   }),
   getters: {
     completedTodos() {
@@ -11,11 +12,6 @@ export const useTodoStore = defineStore("todoStore", {
     },
     incompleteTodos() {
       return this.todos.filter(todo => !todo.isComplete)
-    },
-    countCompleted() {
-      return this.todos.reduce((acc, curr) => {
-        return curr.isComplete ? acc + 1 : acc
-      }, 0)
     },
     countTotal() {
       return this.todos.length

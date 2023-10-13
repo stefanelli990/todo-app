@@ -1,5 +1,5 @@
 <template>
-    <h1 class="mx-auto max-w-xl px-4 text-xl mt-14 md:text-center">{{ noTodoMsg }}</h1>
+    <div class="section-container text-xl mt-14 md:text-center">{{ noTodoMsg }}</div>
 </template>
 
 <script setup>

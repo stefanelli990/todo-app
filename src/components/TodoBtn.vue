@@ -1,5 +1,5 @@
 <template>
-  <button class="p-3 rounded-md outline-none hover:opacity-80" :class="colour">
+  <button class="p-3 rounded-md text-white outline-none hover:opacity-80" :class="colour">
     <slot></slot>
   </button>
 </template>

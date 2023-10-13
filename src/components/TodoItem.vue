@@ -1,27 +1,28 @@
 <template>
   <li
-    class="mb-4 p-3 rounded-md flex items-center border"
+    class="mb-4 p-3 rounded-md flex items-center border-2 shadow-md"
     :class="[
-    isEditing ? 'border-yellow-500' : 'border-slate-700',
-    isComplete ? 'bg-gray-600' : 'bg-slate-700'
+    isEditing ? 'border-yellow-400' : 'border-transparent',
+    isComplete ? 'bg-gray-200' : 'bg-white'
   ]"
     
   >
     <div class="contents">
-      <button @click="$emit('complete')">
+      <button @click="todoStore.completeTodo(id)">
         <Icon
           v-if="isComplete"
-          class="text-teal-600"
+          class="text-primaryColor"
           icon="carbon:checkmark-filled"
           width="18"
           height="18"
         />
-        <Icon v-else class="text-slate-500" icon="material-symbols:circle" width="18" height="18" />
+        <Icon v-else class="text-gray-300" icon="material-symbols:circle" width="18" height="18" />
       </button>
       <input
         ref="inputTodoRef"
         v-if="isEditing"
         class="bg-transparent w-full px-2 outline-none"
+        
         type="text"
         v-model="inputTodo"
       />
@@ -31,14 +32,14 @@
       <TodoBtn
         v-if="isEditing"
         @click="handleUpdate(id)"
-        colour="bg-yellow-500 text-black"
+        colour="bg-yellow-400 !text-black"
       >
         <Icon icon="ant-design:save-outlined" width="20" height="20" />
       </TodoBtn>
-      <TodoBtn v-if="!isEditing" @click="editTodo(title)" colour="bg-teal-600"
+      <TodoBtn v-if="!isEditing" @click="editTodo(title)" colour="bg-primaryColor"
         ><Icon icon="bx:edit" width="20" height="20"
       /></TodoBtn>
-      <TodoBtn colour="bg-red-500" @click="$emit('delete')"
+      <TodoBtn colour="bg-red-500" @click="todoStore.deleteTodo(id)"
         ><Icon icon="material-symbols:delete-outline" width="20" height="20"
       /></TodoBtn>
     </div>
@@ -59,7 +60,6 @@ const inputTodo = ref("");
 const inputTodoRef = ref(null);
 
 const props = defineProps(["title", "isComplete", "id"]);
-const emits = defineEmits(["complete", "delete", "update"]);
 
 const editTodo = (title) => {
   isEditing.value = true;
