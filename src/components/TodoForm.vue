@@ -1,5 +1,5 @@
 <template>
-  <div class="section-container max-w-md mb-8">
+  <div class="section-container max-w-md mb-8" :class="triggerErrAnimation ? 'animate-wiggle' : ''">
     <form @submit.prevent="addNewTodo" class="bg-white flex p-3 border-2 rounded-lg" :class="errMsg ? 'border-red-500' : 'border-gray-200'">
       <input
         class="bg-transparent w-full px-4 py-2 outline-none"
@@ -27,6 +27,7 @@ import { v4 as uuidv4 } from "uuid"
 
 const todoInput = ref("")
 const errMsg = ref(false)
+const triggerErrAnimation = ref(false)
 
 const todoStore = useTodoStore()
 
@@ -44,6 +45,10 @@ const addNewTodo = () => {
     todoStore.tab = 'all'
   } else {
     errMsg.value = true
+    triggerErrAnimation.value = true
+    setTimeout(() => {
+      triggerErrAnimation.value = false
+    }, 500);
   }
 };
 </script>
