@@ -1,9 +1,10 @@
 <template>
   <li
-    class="mb-4 p-3 rounded-md flex items-center border-2 shadow-md"
+    class="mb-4 p-3 rounded-md flex items-center border-2 shadow-md duration-75"
     :class="[
     isEditing ? 'border-yellow-400' : 'border-transparent',
-    isComplete ? 'bg-gray-200' : 'bg-white'
+    isComplete ? 'bg-gray-200' : 'bg-white',
+    triggerAnimation ? 'animate-wiggle' : ''
   ]"
     
   >
@@ -58,6 +59,7 @@ const todoStore = useTodoStore();
 const isEditing = ref(false);
 const inputTodo = ref("");
 const inputTodoRef = ref(null);
+const triggerAnimation = ref(false)
 
 const props = defineProps(["title", "isComplete", "id"]);
 
@@ -71,7 +73,15 @@ const editTodo = (title) => {
 };
 
 const handleUpdate = (id) => {
-  todoStore.updateTodo(id, inputTodo.value);
-  isEditing.value = false;
-};
+  if(inputTodo.value.length !== 0) {
+    todoStore.updateTodo(id, inputTodo.value);
+    isEditing.value = false;
+  } else {
+    triggerAnimation.value = true
+    inputTodoRef.value.focus();
+    setTimeout(() => {
+      triggerAnimation.value = false
+    }, 500)
+  }
+}
 </script>
