@@ -21,7 +21,9 @@
   </Transition>
   </div>
 
-  <NoTodo/>
+  <Transition name="no-todos-animation">
+    <NoTodo/>
+  </Transition>
 </template>
 
 <script setup>
@@ -66,28 +68,32 @@ const todoStore = useTodoStore()
 
 .all-animation-enter-from,
 .completed-animation-enter-from,
-.incomplete-animation-enter-from {
+.incomplete-animation-enter-from,
+.no-todos-animation-enter-from {
   opacity: 0;
   translate: 100px 0;
 }
 
 .all-animation-enter-to,
 .completed-animation-enter-to,
-.incomplete-animation-enter-to {
+.incomplete-animation-enter-to,
+.no-todos-animation-enter-to {
   opacity: 1;
   translate: 0 0;
 }
 
 .all-animation-leave-from,
 .completed-animation-leave-from,
-.incomplete-animation-leave-from {
+.incomplete-animation-leave-from,
+.no-todos-animation-leave-from  {
   opacity: 1;
   translate: 0 0;
 }
 
 .all-animation-leave-to,
 .completed-animation-leave-to,
-.incomplete-animation-leave-to {
+.incomplete-animation-leave-to,
+.no-todos-animation-leave-to {
   opacity: 0;
   translate: -100px 0;
 }
@@ -97,12 +103,15 @@ const todoStore = useTodoStore()
 .completed-animation-enter-active,
 .completed-animation-leave-active,
 .incomplete-animation-enter-active,
-.incomplete-animation-leave-active {
+.incomplete-animation-leave-active,
+.no-todos-animation-enter-active,
+.no-todos-animation-leave-active {
   transition: all 0.3s;
 }
 .all-animation-leave-active,
 .completed-animation-leave-active,
-.incomplete-animation-leave-active {
+.incomplete-animation-leave-active,
+.no-todos-animation-leave-active {
   position: absolute;
   left:16px; 
   right: 16px;
