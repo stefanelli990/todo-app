@@ -1,17 +1,25 @@
 <template>
   <TodoTabs/>
   
-  <TransitionGroup name="todos" tag="ul" class="section-container relative" v-if="todoStore.tab === 'all'">
+  <div class="relative">
+    <Transition name="all-animation">
+    <TransitionGroup name="todos" tag="ul" class="section-container relative" v-if="todoStore.tab === 'all'">
     <TodoItem v-for="todo in todoStore.todos" :key="todo.id" :id="todo.id" :title="todo.title" :is-complete="todo.isComplete"/>
   </TransitionGroup>
+  </Transition>
  
-  <TransitionGroup name="todos" tag="ul" class="section-container relative" v-if="todoStore.tab === 'completed'">
+  <Transition name="completed-animation">
+    <TransitionGroup name="todos" tag="ul" class="section-container relative" v-if="todoStore.tab === 'completed'">
     <TodoItem v-for="todo in todoStore.completedTodos" :key="todo.id" :id="todo.id" :title="todo.title" :is-complete="todo.isComplete"/>
   </TransitionGroup>
+  </Transition>
 
-  <TransitionGroup name="todos" tag="ul" class="section-container relative" v-if="todoStore.tab === 'incomplete'">
+  <Transition name="incomplete-animation">
+    <TransitionGroup name="todos" tag="ul" class="section-container relative" v-if="todoStore.tab === 'incomplete'">
     <TodoItem v-for="todo in todoStore.incompleteTodos" :key="todo.id" :id="todo.id" :title="todo.title" :is-complete="todo.isComplete"/>
   </TransitionGroup>
+  </Transition>
+  </div>
 
   <NoTodo/>
 </template>
@@ -53,5 +61,54 @@ const todoStore = useTodoStore()
 .todos-leave-active { position: absolute; left:16px; right: 16px;}
 .todos-leave-from { opacity: 1; }
 .todos-leave-to { opacity: 0; }
+
+/* switching tabs animation */
+
+.all-animation-enter-from,
+.completed-animation-enter-from,
+.incomplete-animation-enter-from {
+  opacity: 0;
+  translate: 100px 0;
+}
+
+.all-animation-enter-to,
+.completed-animation-enter-to,
+.incomplete-animation-enter-to {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.all-animation-leave-from,
+.completed-animation-leave-from,
+.incomplete-animation-leave-from {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.all-animation-leave-to,
+.completed-animation-leave-to,
+.incomplete-animation-leave-to {
+  opacity: 0;
+  translate: -100px 0;
+}
+
+.all-animation-enter-active,
+.all-animation-leave-active,
+.completed-animation-enter-active,
+.completed-animation-leave-active,
+.incomplete-animation-enter-active,
+.incomplete-animation-leave-active {
+  transition: all 0.3s;
+}
+.all-animation-leave-active,
+.completed-animation-leave-active,
+.incomplete-animation-leave-active {
+  position: absolute;
+  left:16px; 
+  right: 16px;
+  top: 0;
+}
+
+
 
 </style>
