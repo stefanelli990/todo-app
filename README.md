@@ -27,13 +27,3 @@ To run this project locally, follow these steps:
 2. Install the required dependencies using `npm install`.
 3. Start the development server with `npm run dev`.
 4. Once the development server is running, open your browser and navigate to `http://localhost:5173` to use the app.
-
-## Contributing
-
-If you want to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-   ```bash
-   git clone https://github.com/yourusername/todo-app.git
-   cd todo-app
