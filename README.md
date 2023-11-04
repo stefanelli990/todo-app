@@ -2,7 +2,7 @@
 
 ## Description:
 
-A minimalist to-do app, with a clean and user-friendly interface. It allows you to effortlessly add, update, and complete tasks quickly.
+A minimalist to-do app, with a clean and user-friendly interface. It allows you to effortlessly add, update, and complete todos quickly.
 
 ## Features:
 
