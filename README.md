@@ -11,28 +11,11 @@ A minimalist to-do app, with a clean and user-friendly interface. It allows you 
 - Responsive Design: The app is mobile-friendly, allowing users to manage their todos on the go;
 - Data Persistence: Todos are stored in local storage, making them available even after a page refresh;
 
-## Recommended IDE Setup
+## Technologies Used:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Frontend Framework: Vue.js for building the frontend of the application.
+- CSS Framework: Tailwind CSS for styling and layout design.
+- Netlify for project deployment and hosting.
+- Libraries/Dependencies:
+    - Iconify: Used for incorporating icons into the application.
+    - UUID: Used for generating unique identifiers in the application.
