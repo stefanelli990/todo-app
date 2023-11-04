@@ -1,6 +1,15 @@
-# todo-app
+# Project Title: Todo App
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description:
+
+A minimalist to-do app, with a clean and user-friendly interface. It allows you to effortlessly add, update, and complete tasks quickly.
+
+## Features:
+
+Task Management: Users can add, delete, and edit tasks. Each task can have a title and description;
+User-Friendly Interface: An intuitive design ensures a seamless user experience;
+Responsive Design: The app is mobile-friendly, allowing users to manage their todos on the go.
+Data Persistence: Todos are stored in local storage, making them available even after a page refresh.
 
 ## Recommended IDE Setup
 
