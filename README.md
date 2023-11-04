@@ -1,8 +1,10 @@
-# Project Title: Todo App
+# Todo App
 
 ## Description:
 
 A minimalist to-do app, with a clean and user-friendly interface. It allows you to effortlessly add, update, and complete todos quickly.
+
+Live Preview: (https://legendary-bavarois-35b491.netlify.app/)
 
 ## Features:
 
