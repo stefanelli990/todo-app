@@ -4,14 +4,14 @@
 
 A minimalist to-do app, with a clean and user-friendly interface. It allows you to effortlessly add, update, and complete todos quickly.
 
-You can access a live preview of the Todo App [here](https://legendary-bavarois-35b491.netlify.app/).
+**[Live Preview](https://legendary-bavarois-35b491.netlify.app/)**: Try the Todo App live.
 
 ## Features:
 
-- **Task Management**: Users can add, delete, and edit tasks. Each task can have a title and description;
-- **User-Friendly Interface**: An intuitive design ensures a seamless user experience;
-- **Responsive Design**: The app is mobile-friendly, allowing users to manage their todos on the go;
-- **Data Persistence**: Todos are stored in local storage, making them available even after a page refresh;
+- **Todo Management**: Users can add, delete and edit todos. Each todo can have a title and description.
+- **User-Friendly Interface**: An intuitive design ensures a seamless user experience.
+- **Responsive Design**: The app is mobile-friendly, allowing users to manage their todos on the go.
+- **Data Persistence**: Todos are stored in local storage, making them available even after a page refresh.
 
 ## Technologies Used:
 
