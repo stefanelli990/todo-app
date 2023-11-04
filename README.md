@@ -6,10 +6,10 @@ A minimalist to-do app, with a clean and user-friendly interface. It allows you 
 
 ## Features:
 
-Task Management: Users can add, delete, and edit tasks. Each task can have a title and description;
-User-Friendly Interface: An intuitive design ensures a seamless user experience;
-Responsive Design: The app is mobile-friendly, allowing users to manage their todos on the go.
-Data Persistence: Todos are stored in local storage, making them available even after a page refresh.
+- Task Management: Users can add, delete, and edit tasks. Each task can have a title and description;
+- User-Friendly Interface: An intuitive design ensures a seamless user experience;
+- Responsive Design: The app is mobile-friendly, allowing users to manage their todos on the go;
+- Data Persistence: Todos are stored in local storage, making them available even after a page refresh;
 
 ## Recommended IDE Setup
 
