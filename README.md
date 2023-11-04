@@ -15,9 +15,6 @@ A minimalist to-do app, with a clean and user-friendly interface. It allows you 
 
 ## Technologies Used:
 
-- **Frontend Framework**: Vue.js for building the frontend of the application.
-- **CSS Framework**: Tailwind CSS for styling and layout design.
-- **Netlify** for project deployment and hosting.
-- **Libraries/Dependencies**:
-    - Iconify: Used for incorporating icons into the application.
-    - UUID: Used for generating unique identifiers in the application.
+- **Vue.js** for building the frontend of the application.
+- **Tailwind CSS** for styling and layout design.
+- **Pinia** for state management.
