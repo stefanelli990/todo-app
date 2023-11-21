@@ -8,6 +8,6 @@
 
 const props = defineProps({
     colour: String, // Define the prop and its type
-  })
+})
 
 </script>

@@ -57,7 +57,7 @@ export const useTodoStore = defineStore("todoStore", {
       const todo = this.todos.find((todo) => todo.id === todoId);
       if (todo) {
         todo.title = inputTodo
-        toast.info('Todo updated successfully!')
+        toast.info('Todo has been updated.')
         this.updateLocalStorage() // Update local storage when updating a todo
       }
     },
