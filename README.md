@@ -9,9 +9,11 @@ A minimalist to-do app, with a clean and user-friendly interface. It allows you 
 ## Features:
 
 - **Todo Management**: Users can add, delete and edit todos. Each todo can have a title and description.
+- **Data Persistence**: Todos are stored in local storage, making them available even after a page refresh.
+- **Toast Notifications**: Receive real-time feedback with toast notifications for successful todo additions, updates, and deletions.
 - **User-Friendly Interface**: An intuitive design ensures a seamless user experience.
 - **Responsive Design**: The app is mobile-friendly, allowing users to manage their todos on the go.
-- **Data Persistence**: Todos are stored in local storage, making them available even after a page refresh.
+- **Animations**: Enjoy a visually appealing experience with smooth animations enhancing interactions throughout the application.
 
 ## Technologies Used:
 
