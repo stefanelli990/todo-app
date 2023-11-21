@@ -47,13 +47,14 @@ const todoStore = useTodoStore()
 
 <style>
 
+/* adding todos */
 .todos-enter-from {
   opacity: 0;
-  translate: 100px 0 0 0;
+  transform: scale(0.7);
 }
 .todos-enter-to {
   opacity: 1;
-  translate: 0;
+  transform: scale(1);
 }
 .todos-enter-active,
 .todos-leave-active,
@@ -61,8 +62,8 @@ const todoStore = useTodoStore()
   transition: all 0.2s;
 }
 .todos-leave-active { position: absolute; left:16px; right: 16px;}
-.todos-leave-from { opacity: 1; }
-.todos-leave-to { opacity: 0; }
+.todos-leave-from { opacity: 1; transform: scale(1); }
+.todos-leave-to { opacity: 0; transform: scale(0.7); }
 
 /* switching tabs animation */
 
@@ -71,7 +72,7 @@ const todoStore = useTodoStore()
 .incomplete-animation-enter-from,
 .no-todos-animation-enter-from {
   opacity: 0;
-  translate: 100px 0;
+  transform: scale(0.7);
 }
 
 .all-animation-enter-to,
@@ -79,7 +80,7 @@ const todoStore = useTodoStore()
 .incomplete-animation-enter-to,
 .no-todos-animation-enter-to {
   opacity: 1;
-  translate: 0 0;
+  transform: scale(1);
 }
 
 .all-animation-leave-from,
@@ -87,7 +88,7 @@ const todoStore = useTodoStore()
 .incomplete-animation-leave-from,
 .no-todos-animation-leave-from  {
   opacity: 1;
-  translate: 0 0;
+  transform: scale(1);
 }
 
 .all-animation-leave-to,
@@ -95,7 +96,7 @@ const todoStore = useTodoStore()
 .incomplete-animation-leave-to,
 .no-todos-animation-leave-to {
   opacity: 0;
-  translate: -100px 0;
+  transform: scale(0.7);
 }
 
 .all-animation-enter-active,
@@ -117,7 +118,5 @@ const todoStore = useTodoStore()
   right: 16px;
   top: 0;
 }
-
-
 
 </style>

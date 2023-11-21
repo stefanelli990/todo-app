@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+    * {
+        @apply font-montserrat;
+    }
     body {
-        @apply bg-offWhite text-black
+        @apply bg-offWhite text-black text-sm;
     }
 }
 
@@ -12,4 +17,18 @@
     .section-container {
         @apply mx-auto max-w-xl px-4
     }
+}
+
+@layer utilities {
+    .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+/* toastification overrides */
+.Vue-Toastification__toast-body {
+    @apply text-sm flex items-center space-x-0 !important;
+}
+.Vue-Toastification__icon  {
+    @apply mr-2 w-4 !important;
 }

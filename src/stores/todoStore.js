@@ -1,4 +1,7 @@
 import { defineStore } from "pinia";
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
 
 export const useTodoStore = defineStore("todoStore", {
   state: () => ({
@@ -19,8 +22,9 @@ export const useTodoStore = defineStore("todoStore", {
   },
   actions: {
     addTodo(todo) {
-      this.todos.unshift(todo);
-      this.updateLocalStorage(); // Update local storage when updating a todo
+      this.todos.unshift(todo)
+      toast.success('Todo added successfully!')
+      this.updateLocalStorage() // Update local storage when updating a todo
     },
     deleteTodo(todoId) {
       // Find the index of the todo item with the given ID
@@ -29,6 +33,7 @@ export const useTodoStore = defineStore("todoStore", {
       // If found, remove it from the array
       if (index !== -1) {
         this.todos.splice(index, 1);
+        toast.success('Todo deleted successfully!')
         this.updateLocalStorage(); // Update local storage when updating a todo
       }
     },
@@ -40,14 +45,20 @@ export const useTodoStore = defineStore("todoStore", {
       if (todo) {
         todo.isComplete = !todo.isComplete;
         this.updateLocalStorage(); // Update local storage when updating a todo
+        if(todo.isComplete) {
+          toast.success('Well done! Todo marked as completed!')
+        } else {
+          toast.info('Todo remains incomplete.')
+        }
       }
     },
     updateTodo(todoId, inputTodo) {
       // Find the index of the todo item with the given ID
       const todo = this.todos.find((todo) => todo.id === todoId);
       if (todo) {
-        todo.title = inputTodo;
-        this.updateLocalStorage(); // Update local storage when updating a todo
+        todo.title = inputTodo
+        toast.info('Todo updated successfully!')
+        this.updateLocalStorage() // Update local storage when updating a todo
       }
     },
     // Function to update local storage

@@ -49,10 +49,13 @@
 </template>
 
 <script setup>
-import { ref, nextTick } from "vue";
-import { Icon } from "@iconify/vue";
-import TodoBtn from "../components/TodoBtn.vue";
-import { useTodoStore } from "../stores/todoStore";
+import { ref, nextTick } from "vue"
+import { Icon } from "@iconify/vue"
+import TodoBtn from "../components/TodoBtn.vue"
+import { useTodoStore } from "../stores/todoStore"
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
 
 const todoStore = useTodoStore();
 
@@ -77,6 +80,7 @@ const handleUpdate = (id) => {
     todoStore.updateTodo(id, inputTodo.value);
     isEditing.value = false;
   } else {
+    toast.error('Please enter a valid todo.')
     triggerAnimation.value = true
     inputTodoRef.value.focus();
     setTimeout(() => {

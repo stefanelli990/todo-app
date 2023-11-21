@@ -1,5 +1,5 @@
 <template>
-    <div class="section-container max-w-md text-lg font-medium text-center">{{ noTodoMsg }}</div>
+    <div class="section-container max-w-md text-lg font-semibold text-center">{{ noTodoMsg }}</div>
 </template>
 
 <script setup>

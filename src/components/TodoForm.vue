@@ -22,6 +22,9 @@ import { ref } from "vue"
 import { Icon } from "@iconify/vue"
 import { useTodoStore } from "../stores/todoStore"
 import { v4 as uuidv4 } from "uuid"
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
 
 const todoInput = ref("")
 const triggerAnimation = ref(false)
@@ -40,6 +43,7 @@ const addNewTodo = () => {
     todoInput.value = ""
     todoStore.tab = 'all'
   } else {
+    toast.error('Please enter a valid todo.')
     triggerAnimation.value = true
     setTimeout(() => {
       triggerAnimation.value = false
