@@ -1,11 +1,13 @@
+<!-- TodoList.vue -->
+
 <template>
   <TodoTabs/>
   
   <div class="relative">
-    <Transition name="all-animation">
+    <Transition  name="all-animation">
     <TransitionGroup name="todos" tag="ul" class="section-container relative" v-if="todoStore.tab === 'all'">
-    <TodoItem v-for="todo in todoStore.todos" :key="todo.id" :id="todo.id" :title="todo.title" :is-complete="todo.isComplete"/>
-  </TransitionGroup>
+        <TodoItem v-for="todo in todoStore.todos" :key="todo.id" :id="todo.id" :title="todo.title" :is-complete="todo.isComplete" />
+    </TransitionGroup>
   </Transition>
  
   <Transition name="completed-animation">
@@ -27,21 +29,13 @@
 </template>
 
 <script setup>
-// import { watchEffect } from 'vue'
+
 import { useTodoStore } from "../stores/todoStore"
 import TodoItem from "./TodoItem.vue"
-import TodoTabs from "./TodoTabs.vue";
-import NoTodo from "./NoTodo.vue";
+import TodoTabs from "./TodoTabs.vue"
+import NoTodo from "./NoTodo.vue"
 
 const todoStore = useTodoStore()
-
-// ovde napisati logiku da se switchuje na all tabu kada nema todosa u complete i pending
-
-// watchEffect(() => {
-//   if (todoStore.completedTodos.length === 0 || todoStore.incompleteTodos.length === 0) {
-//     todoStore.tab = 'all';
-//   }
-// })
 
 </script>
 
